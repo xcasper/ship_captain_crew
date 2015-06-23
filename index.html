@@ -31,39 +31,34 @@
 		#device_owner_player_row{
 			width: 100%;
 			height: 15%;
-			background-color: red;
 		}
 		
 		#device_owner_player_name{
 			width: 70%;
-			background-color: purple;
 		}
 		
 		#device_owner_score{
 			width: 30%;
-			background-color: yellow;
-			float: left;
+
 		}
 		
-		.player_name h1{
+		.player_info#device_owner_score h1{
+			float: right;
+		}
+		.player_info h1{
 			padding: 0;
 			margin: 0;
 		}
 		
-		.player_name h3{
-			padding: 0;
-			margin: 0;
-		}
 		
 		#dice_row{
 			height: 15%;
-			background-color: blue;
 		}
 		
 		#dice_center{
 			width: 100%;
 			margin-left: 30%;
-			margin-top: 15%;
+			margin-top: 5%;
 		}
 		
 		.game_item{
@@ -71,25 +66,31 @@
 			float: left;
 			width: 5%;
 			margin: 5px;
-			border: 1px solid black;
 			
 		}
 		
 		.dice{
-			width: 5%;			
+			width: 5%;
+			border-radius: 15px;
+			background-image: url("img/dice/dice-1.png");
+			background-repeat: no-repeat;
+			background-size: cover;
 		}
 		
 		#roll_button{
 			width: 10%;
+			background-color: #337ab7;
+			border-color: #2e6da4;
+			border-radius: 15px;
+			color: #fff;
+			text-align: center;
+			
 		}
 		
-		/* #other_players{
-			text-align: center;
-		} */
-		
-		/* #other_player_name{
-			padding: 15%;
-		} */
+		#roll_button h1{
+			padding: 0;
+			font-size: 1.8em;
+		}
 		
 		#other_player_center{
 			margin-left: 30%;
@@ -100,11 +101,11 @@
 		}
 		#other_player_name{
 			width: 37%;
-			border: 1px solid red;
 		}
 		#other_player_score{
 			width: 20%;
-			border: 1px solid red;
+			float: right;
+			margin-right: 30%;
 		}
 		
 		#other_players ul{
@@ -117,9 +118,9 @@
 <body>
 	<div class="container">
 		<div id="game_container">
-			<div class="player_name" id="device_owner_player_row">
-				<div class="player_info" id="device_owner_player_name"><h1>Player 1</h1></div>
-				<div class="player_info" id="device_owner_score"><h1>Score: </h1></div>
+			<div class="" id="device_owner_player_row">
+				<div class="player_name player_info" id="device_owner_player_name"><h1>Test Player 1</h1></div>
+				<div class="player_info" id="device_owner_score"><h1>Score: 12</h1></div>
 			</div>
 			
 			<div class="clear"></div>
@@ -131,7 +132,7 @@
 					<div class="dice game_item" id="die3"></div>
 					<div class="dice game_item" id="die4"></div>
 					<div class="dice game_item" id="die5"></div>
-					<div class="game_item" id="roll_button"></div>
+					<div class="game_item" id="roll_button"><h1>Roll Dice</h1></div>
 				</div>
 			</div>
 			
@@ -155,11 +156,10 @@
 							<div class="clear"></div>
 							<li><div class="other_player_info" id="other_player_name"><h3>Test Player 5</h3></div></li>
 							<li><div class="other_player_info" id="other_player_score"><h3>10</h3></div></li>
+							<div class="clear"></div>
+							<li><div class="other_player_info" id="other_player_name"><h3>Test Player 6</h3></div></li>
+							<li><div class="other_player_info" id="other_player_score"><h3>8</h3></div></li>
 					</div>
-					<!-- <div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">10</span></h3></div>
-					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">08</span></h3></div>
-					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">11</span></h3></div>
-					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">07</span></h3></div> -->
 				</div>
 			</div>
 		</div>
