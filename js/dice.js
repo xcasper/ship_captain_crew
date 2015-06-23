@@ -13,11 +13,8 @@ function dice(id){
 	this.roll = function(){
 		this.previousRoll = this.currentRoll;
 		this.currentRoll = getRandomRoll(1, 6);	
-		alert(this.currentRoll);
 	}
 }
-//generate rollable dice list
-//roll each dice
 
 function getRollableDiceList(){
 	var tempDiceList = [];
@@ -33,7 +30,26 @@ function getRandomRoll(min,max){
 	return Math.floor(Math.random() * (max-min + 1) + min);
 }
 
+function rollDice(rollableDiceList){
+	for(j = 0; j < rollableDiceList.length; j++){
+		rollableDiceList[0].roll();
+	}
+}
+
+function updateDiceImages(){
+
+}
+
 $("#roll_button").click(function(){
+	//generate rollable dice list
 	var rollableDiceList = getRollableDiceList();
+	
+	//roll each dice
+	rollDice(rollableDiceList);
+	//update dice images
+	updateDiceImages();
+	//auto select first 6, 5, 4 (in that order)
+	
+	//
 	
 });
