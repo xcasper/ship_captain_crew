@@ -1,0 +1,115 @@
+/* General Document Styles */
+body{
+	font-family: 'Open Sans', Helvetica, Arial, Sans-Serif;
+}
+
+.clear{
+	clear: both;
+}
+
+.container{
+	position:absolute;
+	top:0;
+	left:0;
+	background-color: green;
+}
+
+#game_container {
+	height: 100%;
+
+}
+
+/* Device Owner (current player) Info Styles */
+.player_info{
+	float: left;
+	height: 100%;
+}
+
+#device_owner_player_row{
+	width: 100%;
+	height: 15%;
+}
+
+#device_owner_player_name{
+	width: 70%;
+}
+
+#device_owner_score{
+	width: 30%;
+
+}
+
+.player_info#device_owner_score h1{
+	float: right;
+}
+.player_info h1{
+	padding: 0;
+	margin: 0;
+}
+
+/* Dice Styles */
+#dice_row{
+	height: 15%;
+}
+
+#dice_center{
+	width: 100%;
+	margin-left: 30%;
+	margin-top: 5%;
+}
+
+.game_item{
+	position: relative;
+	float: left;
+	width: 5%;
+	margin: 5px;
+	
+}
+
+.dice{
+	width: 5%;
+	border-radius: 15px;
+	background-image: url("../img/dice/dice-1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* Button Styles -- some styles come from dice styles */
+#roll_button{
+	width: 10%;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	border-radius: 15px;
+	color: #fff;
+	text-align: center;
+	
+}
+
+#roll_button h1{
+	padding: 0;
+	font-size: 1.8em;
+}
+
+/* Other Player Info Styles */
+#other_player_center{
+	margin-left: 30%;
+}
+
+.other_player_info{
+	float: left;
+}
+
+#other_player_name{
+	width: 37%;
+}
+
+#other_player_score{
+	width: 20%;
+	float: right;
+	margin-right: 30%;
+}
+
+#other_players ul{
+	padding: 0;
+	list-style: none;
+}
