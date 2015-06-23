@@ -43,6 +43,7 @@ function updateDiceImageUrl(){
 		
 		currentDice.diceImageUrl = "img/dice/dice-" + currentDice.currentRoll + ".png";
 		
+		//update div image
 		updateDiceDivImage(currentDice);
 	}
 }
@@ -51,10 +52,61 @@ function updateDiceDivImage(currentDice) {
 	document.getElementById("dice"+currentDice.id).style.backgroundImage = "url('" + currentDice.diceImageUrl +"')";
 }
 
+function getNonSelectedDice(){
+	var tempArray = [];
+	for(i = 0; i < diceArray.length; i++){
+		if(!diceArray[i].isSelected){
+			tempArray.push(diceArray[i]);
+		} 
+	}
+	return tempArray;
+}
+	
+
+
+function checkForShipCaptCrew(){
+	var shipExist = false;
+	var captExist = false;
+	var crewExist = false;
+	
+	var nonSelectedDice = getNonSelectedDice(); 
+
+	
+	for(i = 0; i < nonSelectedDice.length; i++){
+		currentDice = nonSelectedDice[i];
+		alert(currentDice.currentRoll);
+		if(currentDice.currentRoll == 6){
+			if(!shipExist){
+				shipExist = true;
+				currentDice.isSelected = true;
+			}
+		}
+	}
+	
+		
+		
+	/*	else if(diceArray[i].currentRoll == 5){
+				if(shipExist && !captExist){
+					captExist = true;
+					diceArray[i].isSelected = true;
+				}
+		} else if(diceArray[i].currentRoll == 4){
+				if(shipExist && captExist && ){
+					captExist = true;
+					diceArray[i].isSelected = true;
+				}
+		}
+			
+	} */
+}
+
 $("#roll_button").click(function(){
 	//generate rollable dice list
 	var rollableDiceList = getRollableDiceList();
 	
+	//for(i = 0; i < rollableDiceList.length; i++){
+	//	alert(rollableDiceList[i].isSelected);
+	//}
 	//roll each dice
 	rollDice(rollableDiceList);
 	
@@ -62,7 +114,7 @@ $("#roll_button").click(function(){
 	updateDiceImageUrl();
 	
 	//auto select first 6, 5, 4 (in that order)
-	
+	checkForShipCaptCrew();
 	//
 	
 });
