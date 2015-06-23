@@ -56,7 +56,7 @@
 		}
 		
 		#dice_row{
-			height: 30%;
+			height: 15%;
 			background-color: blue;
 		}
 		
@@ -83,12 +83,33 @@
 			width: 10%;
 		}
 		
-		#other_players{
+		/* #other_players{
 			text-align: center;
+		} */
+		
+		/* #other_player_name{
+			padding: 15%;
+		} */
+		
+		#other_player_center{
+			margin-left: 30%;
 		}
 		
+		.other_player_info{
+			float: left;
+		}
 		#other_player_name{
-			padding-right: 15%;
+			width: 37%;
+			border: 1px solid red;
+		}
+		#other_player_score{
+			width: 20%;
+			border: 1px solid red;
+		}
+		
+		#other_players ul{
+			padding: 0;
+			list-style: none;
 		}
 	</style>
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -97,7 +118,7 @@
 	<div class="container">
 		<div id="game_container">
 			<div class="player_name" id="device_owner_player_row">
-				<div class="player_name player_info" id="device_owner_player_name"><h1>Player 1</h1></div>
+				<div class="player_info" id="device_owner_player_name"><h1>Player 1</h1></div>
 				<div class="player_info" id="device_owner_score"><h1>Score: </h1></div>
 			</div>
 			
@@ -113,12 +134,32 @@
 					<div class="game_item" id="roll_button"></div>
 				</div>
 			</div>
+			
+			<div class="clear"></div>
+			
 			<div id="other_players_row">
 				<div id="other_players">
-					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">10</span></h3></div>
-					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">10</span></h3></div>
-					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">10</span></h3></div>
-					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">10</span></h3></div>
+					<div id="other_player_center">
+						<ul>
+							<li><div class="other_player_info" id="other_player_name"><h3>Player Name</h3></div></li>
+							<li><div class="other_player_info" id="other_player_score"><h3>Score</h3></div></li>
+							<div class="clear"></div>
+							<li><div class="other_player_info" id="other_player_name"><h3>Test Player 2</h3></div></li>
+							<li><div class="other_player_info" id="other_player_score"><h3>11</h3></div></li>
+							<div class="clear"></div>
+							<li><div class="other_player_info" id="other_player_name"><h3>Test Player 3</h3></div></li>
+							<li><div class="other_player_info" id="other_player_score"><h3>9</h3></div></li>
+							<div class="clear"></div>
+							<li><div class="other_player_info" id="other_player_name"><h3>Test Player 4</h3></div></li>
+							<li><div class="other_player_info" id="other_player_score"><h3>6</h3></div></li>
+							<div class="clear"></div>
+							<li><div class="other_player_info" id="other_player_name"><h3>Test Player 5</h3></div></li>
+							<li><div class="other_player_info" id="other_player_score"><h3>10</h3></div></li>
+					</div>
+					<!-- <div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">10</span></h3></div>
+					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">08</span></h3></div>
+					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">11</span></h3></div>
+					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">07</span></h3></div> -->
 				</div>
 			</div>
 		</div>
