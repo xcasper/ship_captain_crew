@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ship Captain Crew App</title>
+	<style>
+		body{
+			font-family: 'Open Sans', Helvetica, Arial, Sans-Serif;
+		}
+		
+		.clear{
+			clear: both;
+		}
+		
+		#game_container {
+			position:absolute;
+			top:0;
+			left:0;
+			background-color: green;
+		}
+		
+		#device_owner_player_row{
+			float: left;
+			width: 70%;
+			height: 15%;
+			background-color: red;
+		}
+		
+		#device_owner_score{
+			width: 25%;
+			background-color: yellow;
+		}
+		
+		.player_name h1{
+			padding: 0;
+			margin: 0;
+		}
+		
+		.player_name h3{
+			padding: 0;
+			margin: 0;
+		}
+		
+		#dice_row{
+			width: 100%;
+			height: 70%;
+			background-color: blue;
+		}
+		
+		#dice_center{
+			height: 100%;
+			width: 100%;
+			margin-left: 30%;
+		}
+		
+		.dice{
+			float: left;
+			width: 5%;
+			margin: 5px;
+			border: 1px solid black;
+			
+		}
+		
+		#roll_button{
+			float: left;
+			width: 10%;
+			height: 100%;
+			margin: 5px;
+			border: 1px solid black;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div id="game_container">
+			<div class="player_name" id="device_owner_player_row">
+				<div class="player_name" id="device_owner_player_name"><h1>Player 1</h1></div>
+				<div id="device_owner_score"><h1>Score: </h1></div>
+			</div>
+			
+			<div class="clear"></div>
+			
+			<div id="dice_row">
+				<div id="dice_center">
+					<div class="dice" id="die1"></div>
+					<div class="dice" id="die2"></div>
+					<div class="dice" id="die3"></div>
+					<div class="dice" id="die4"></div>
+					<div class="dice" id="die5"></div>
+					<div id="roll_button"></div>
+				</div>
+			</div>
+			<div id="other_players_row">
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		$(document).ready(function() {
+			$("#game_container").css("width", $(window).width());
+			$("#game_container").css("height", $(window).height());
+			$(".dice").height($(".dice").width());
+			$("#roll_button").height($(".dice").width());
+			
+		});
+	</script>
+</body>
+</html>
