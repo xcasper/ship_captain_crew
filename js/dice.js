@@ -32,12 +32,12 @@ function getRandomRoll(min,max){
 
 function rollDice(rollableDiceList){
 	for(j = 0; j < rollableDiceList.length; j++){
-		rollableDiceList[0].roll();
+		rollableDiceList[j].roll();
 	}
 }
 
 function updateDiceImages(){
-
+	for(int i = 0; i < 
 }
 
 $("#roll_button").click(function(){
@@ -46,8 +46,10 @@ $("#roll_button").click(function(){
 	
 	//roll each dice
 	rollDice(rollableDiceList);
+	
 	//update dice images
 	updateDiceImages();
+	
 	//auto select first 6, 5, 4 (in that order)
 	
 	//
