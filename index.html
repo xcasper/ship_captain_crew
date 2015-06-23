@@ -11,23 +11,38 @@
 			clear: both;
 		}
 		
-		#game_container {
+		.container{
 			position:absolute;
 			top:0;
 			left:0;
 			background-color: green;
 		}
 		
-		#device_owner_player_row{
+		#game_container {
+			height: 100%;
+
+		}
+		
+		.player_info{
 			float: left;
-			width: 70%;
+			height: 100%;
+		}
+		
+		#device_owner_player_row{
+			width: 100%;
 			height: 15%;
 			background-color: red;
 		}
 		
+		#device_owner_player_name{
+			width: 70%;
+			background-color: purple;
+		}
+		
 		#device_owner_score{
-			width: 25%;
+			width: 30%;
 			background-color: yellow;
+			float: left;
 		}
 		
 		.player_name h1{
@@ -41,18 +56,18 @@
 		}
 		
 		#dice_row{
-			width: 100%;
-			height: 70%;
+			height: 30%;
 			background-color: blue;
 		}
 		
 		#dice_center{
-			height: 100%;
 			width: 100%;
 			margin-left: 30%;
+			margin-top: 15%;
 		}
 		
-		.dice{
+		.game_item{
+			position: relative;
 			float: left;
 			width: 5%;
 			margin: 5px;
@@ -60,12 +75,20 @@
 			
 		}
 		
+		.dice{
+			width: 5%;			
+		}
+		
 		#roll_button{
-			float: left;
 			width: 10%;
-			height: 100%;
-			margin: 5px;
-			border: 1px solid black;
+		}
+		
+		#other_players{
+			text-align: center;
+		}
+		
+		#other_player_name{
+			padding-right: 15%;
 		}
 	</style>
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -74,31 +97,37 @@
 	<div class="container">
 		<div id="game_container">
 			<div class="player_name" id="device_owner_player_row">
-				<div class="player_name" id="device_owner_player_name"><h1>Player 1</h1></div>
-				<div id="device_owner_score"><h1>Score: </h1></div>
+				<div class="player_name player_info" id="device_owner_player_name"><h1>Player 1</h1></div>
+				<div class="player_info" id="device_owner_score"><h1>Score: </h1></div>
 			</div>
 			
 			<div class="clear"></div>
 			
 			<div id="dice_row">
 				<div id="dice_center">
-					<div class="dice" id="die1"></div>
-					<div class="dice" id="die2"></div>
-					<div class="dice" id="die3"></div>
-					<div class="dice" id="die4"></div>
-					<div class="dice" id="die5"></div>
-					<div id="roll_button"></div>
+					<div class="dice game_item" id="die1"></div>
+					<div class="dice game_item" id="die2"></div>
+					<div class="dice game_item" id="die3"></div>
+					<div class="dice game_item" id="die4"></div>
+					<div class="dice game_item" id="die5"></div>
+					<div class="game_item" id="roll_button"></div>
 				</div>
 			</div>
 			<div id="other_players_row">
+				<div id="other_players">
+					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">10</span></h3></div>
+					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">10</span></h3></div>
+					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">10</span></h3></div>
+					<div class="other_player_info"><h3><span id="other_player_name">Player2</span> <span id="other_player_score">10</span></h3></div>
+				</div>
 			</div>
 		</div>
 	</div>
 	
 	<script>
 		$(document).ready(function() {
-			$("#game_container").css("width", $(window).width());
-			$("#game_container").css("height", $(window).height());
+			$(".container").css("width", $(window).width());
+			$(".container").css("height", $(window).height());
 			$(".dice").height($(".dice").width());
 			$("#roll_button").height($(".dice").width());
 			
