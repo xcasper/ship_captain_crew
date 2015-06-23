@@ -8,8 +8,9 @@ var diceArray = [dice1, dice2, dice3, dice4, dice5];
 function dice(id){
 	this.id = id;
 	this.currentRoll = 0;
-	this.previousRoll = 0;
+	this.previousRoll = 1;
 	this.isSelected = false;
+	this.diceImageUrl = "img/dice/dice-1.png";
 	this.roll = function(){
 		this.previousRoll = this.currentRoll;
 		this.currentRoll = getRandomRoll(1, 6);	
@@ -31,13 +32,23 @@ function getRandomRoll(min,max){
 }
 
 function rollDice(rollableDiceList){
-	for(j = 0; j < rollableDiceList.length; j++){
-		rollableDiceList[j].roll();
+	for(i = 0; i < rollableDiceList.length; i++){
+		rollableDiceList[i].roll();
 	}
 }
 
-function updateDiceImages(){
-	for(int i = 0; i < 
+function updateDiceImageUrl(){
+	for(i = 0; i < diceArray.length; i++){
+		var currentDice = diceArray[i];
+		
+		currentDice.diceImageUrl = "img/dice/dice-" + currentDice.currentRoll + ".png";
+		
+		updateDiceDivImage(currentDice);
+	}
+}
+
+function updateDiceDivImage(currentDice) {
+	document.getElementById("dice"+currentDice.id).style.backgroundImage = "url('" + currentDice.diceImageUrl +"')";
 }
 
 $("#roll_button").click(function(){
@@ -48,7 +59,7 @@ $("#roll_button").click(function(){
 	rollDice(rollableDiceList);
 	
 	//update dice images
-	updateDiceImages();
+	updateDiceImageUrl();
 	
 	//auto select first 6, 5, 4 (in that order)
 	
